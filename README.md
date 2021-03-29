@@ -11,7 +11,9 @@
 
 Further study would be needed for initial setup.
 
+
 * commit *
+
 
 ## Setup for Simple Component ##
   Create the task component and the accompanying story file: src/components/Task.js and src/components/ Task.stories.js
@@ -44,4 +46,14 @@ Further study would be needed for initial setup.
 
   `Actions help you verify interactions when building ui components in isolation. Often you won't have access to the functions and state you have in context of the app. Use action() to stub them in.`
 
-  
+
+  * commit *
+
+
+`parameters` are typically used to control the behavior of Storybook's features and addons. In our case we're going to use them to configure how the actions (mocked callbacks) are handled. 
+
+`actions` allow us to create callbacks that appear in the actions panel of the Storybook UI when clicked. So when we build a pin button, we'll be able to determine in the test UI if a button click is successful. 
+
+Once we've done this, restarting the Storybook server should yield test cases for the three Task states:
+
+
