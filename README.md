@@ -54,6 +54,15 @@ Further study would be needed for initial setup.
 
 `actions` allow us to create callbacks that appear in the actions panel of the Storybook UI when clicked. So when we build a pin button, we'll be able to determine in the test UI if a button click is successful. 
 
-Once we've done this, restarting the Storybook server should yield test cases for the three Task states:
+Once we've done this, restarting the Storybook server should yield test cases for the three Task states. 
+
+
+* commit - at this point I had some minor typos to correct in the config file *
+
+
+## Build out the states ##
+Now that we have Storybook setup, styles imported, and test cases built out, we can quickly start the work of implementing the HTML of the component to match the design.
+
+The component is still basic at the moment. First, write the code that achieves the design without going into too much detail. (See `src/components/Task.js` )
 
 
