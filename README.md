@@ -65,4 +65,19 @@ Now that we have Storybook setup, styles imported, and test cases built out, we 
 
 The component is still basic at the moment. First, write the code that achieves the design without going into too much detail. (See `src/components/Task.js` )
 
+## Snapshot Testing ##
+Snapshot testing refers to the practice of recording the 'known good' output of a component for a given input and then flagging the component whenever the output changes in the future. This complements Storybook, because it's a quick way to view the new version of a component and check out the changes. 
 
+`Make sure your components render data that doesn't change, so that your snapshot tests won't fail each time. Watch out for things like dates or randomly generated values`
+
+When the [Storyshots addon](https://github.com/storybooks/storybook/tree/master/addons/storyshots), a snapshot test is created for each of the stories. Use it by adding the following development dependencies:
+
+`yarn add -D @storybook/addon-storyshots react-test-renderer`
+
+Then create a src/storybook.test.js file with the following in it: 
+
+in src/storybook.test.js:
+`import initStoryshots from '@storybook/addon-storyshots';
+initStoryshots();`
+
+run `yarn test` to see the new tests
