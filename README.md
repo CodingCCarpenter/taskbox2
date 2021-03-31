@@ -38,13 +38,13 @@ Further study would be needed for initial setup.
 
   Since we have multiple permutations of our component, it's convenient to assign it to a Template variable. Introducing this pattern in your stories will reduce the amount of code you need to write and maintain. 
 
-  ` Template.bind({}) is a standard JavaScript technique for making a copy of a function. We use this technique to allow each exported story to set its own properties, but use the same implementation.`
+  `*** Template.bind({}) is a standard JavaScript technique for making a copy of a function. We use this technique to allow each exported story to set its own properties, but use the same implementation.`
 
   Arguments, or `args` for short, allow us to live edit our components with the controls addon without restarting Storybook. Once an `args` value changes, so does the component.
 
   When creating a story we use a base `task` arg to build out the shape of the task the component expects. This is typically modelled from what the true data looks like. Again exporting this shape will enable us to reuse it in later stores, as we'll see. 
 
-  `Actions help you verify interactions when building ui components in isolation. Often you won't have access to the functions and state you have in context of the app. Use action() to stub them in.`
+  `*** Actions help you verify interactions when building ui components in isolation. Often you won't have access to the functions and state you have in context of the app. Use action() to stub them in.`
 
 
   * commit *
@@ -68,7 +68,7 @@ The component is still basic at the moment. First, write the code that achieves 
 ## Snapshot Testing ##
 Snapshot testing refers to the practice of recording the 'known good' output of a component for a given input and then flagging the component whenever the output changes in the future. This complements Storybook, because it's a quick way to view the new version of a component and check out the changes. 
 
-`Make sure your components render data that doesn't change, so that your snapshot tests won't fail each time. Watch out for things like dates or randomly generated values`
+`*** Make sure your components render data that doesn't change, so that your snapshot tests won't fail each time. Watch out for things like dates or randomly generated values`
 
 When the [Storyshots addon](https://github.com/storybooks/storybook/tree/master/addons/storyshots), a snapshot test is created for each of the stories. Use it by adding the following development dependencies:
 
@@ -80,4 +80,4 @@ in src/storybook.test.js:
 `import initStoryshots from '@storybook/addon-storyshots';
 initStoryshots();`
 
-run `yarn test` to see the new tests
+run `yarn test` to see the new tests. We now have a snapshot test for each of our Task stories. If we change the implementation of `Task`, we'll be prompted to verify the changes.
