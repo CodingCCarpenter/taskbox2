@@ -98,3 +98,13 @@ Since the Task data can be sent asynchronously, we also need a loading state to 
 A composite component isn't much different than the basic components it contains. Create a TaskList component and an accompanying storyfile: `src/components/TaskList.js` and `src/components/TaskList.stories.js`.
 
 Start with a rough implementation of `TaskList`. You'll need to import the `Task` component from earlier and pass in the attributes and actions as inputs. 
+
+
+* commit *
+
+
+` *** Decorators are a way to provide arbitrary wrappers to stories. In this case we're using a decorator 'key' on the default export to add some 'padding' around the rendered component. They can also be used to wrap stories in 'providers' -i.e. library components that set React context`
+
+By importing `TaskStories`, we were able to compose the args in our stories with minimal effort. That way the data and actions (mocked callbacks) expected by both components is preserved. 
+
+run `npm storybook` to see the new tasks
