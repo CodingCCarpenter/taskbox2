@@ -15,7 +15,7 @@ Further study would be needed for initial setup.
 * commit *
 
 
-## Setup for Simple Component ##
+# Setup for Simple Component #
   Create the task component and the accompanying story file: src/components/Task.js and src/components/ Task.stories.js
  
   Begin with implementation of the Task, taking in attributes we know we'll need and the two actions you can take on a task to move it between lists.
@@ -81,3 +81,20 @@ in src/storybook.test.js:
 initStoryshots();`
 
 run `yarn test` to see the new tests. We now have a snapshot test for each of our Task stories. If we change the implementation of `Task`, we'll be prompted to verify the changes.
+
+# Assemble a Composite Component #
+### Assemble a composite component out of simpler components ###
+
+Now that we've built our first component, this chapter extends what we learned to build TaskList, a list of Tasks. We will combine components together and see what happens when more complexity is introduced.
+
+## Tasklist ##
+
+Our Taskbox app emphasizes pinned tasks by positioning them above default tasks. This yields two variations of TaskList you need to create stories for: default items and pinned items.
+
+Since the Task data can be sent asynchronously, we also need a loading state to render in the absence of a connection. In addition, an empty state is required when there are no tasks.
+
+## Get Set up to build composite component ##
+
+A composite component isn't much different than the basic components it contains. Create a TaskList component and an accompanying storyfile: `src/components/TaskList.js` and `src/components/TaskList.stories.js`.
+
+Start with a rough implementation of `TaskList`. You'll need to import the `Task` component from earlier and pass in the attributes and actions as inputs. 
