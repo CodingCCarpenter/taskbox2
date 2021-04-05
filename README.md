@@ -141,3 +141,9 @@ Create a test file called src/components/TaskList.test.js. Here, we'll build our
 Note that we've been able to reuse the `WithPinnedTasks` story in our unit test; in this way we can continue to leverage an existing resource (the examples that represent interesting configurations of a component) in many ways. 
 
 Notice as well that this test is quite brittle. It's possible that as the project matures, and the exact implementation of the `Task` changes -- perhaps using a different className or a `testarea` rather than an `input` -- the test will fail and need to be updated. This is not necessarily a problem, but rather an indication to be careful about liberally using unit tests for UI. They're not easy to maintain. INstead, rely on manual, snapshot, and visual regression (see [testing chapter](https://storybook.js.org/tutorials/intro-to-storybook/react/en/test/)) tests where possible
+
+
+* commit *
+
+# Data #
+*this section will be for after completing my typescript with react and storybook tutorial*
