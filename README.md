@@ -107,4 +107,12 @@ Start with a rough implementation of `TaskList`. You'll need to import the `Task
 
 By importing `TaskStories`, we were able to compose the args in our stories with minimal effort. That way the data and actions (mocked callbacks) expected by both components is preserved. 
 
-run `npm storybook` to see the new tasks
+run `npm storybook` to see the new stories for TaskList in storybook
+
+## Build out the states ##
+
+Our component is still rough but now we have an idea of the stories to work toward. You might be thinking that the .list-items wrapper is overly simplistic. You're right - in most cases we wouldn't create a new component just to add a wrapper. But the real complexity of TaskList component is revealed in the edge cases withPinnedTasks, Loading, and empty
+
+
+
+
