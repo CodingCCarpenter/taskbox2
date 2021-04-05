@@ -114,5 +114,25 @@ run `npm storybook` to see the new stories for TaskList in storybook
 Our component is still rough but now we have an idea of the stories to work toward. You might be thinking that the .list-items wrapper is overly simplistic. You're right - in most cases we wouldn't create a new component just to add a wrapper. But the real complexity of TaskList component is revealed in the edge cases withPinnedTasks, Loading, and empty
 
 
+* commit *
+
+
+# Unit Tests with Jest #
+
+## Automated Testing ## 
+
+In the previous chapter, we learned how to snapshot test stories using Storyshots. With `Task` there wasn't a lot of complexity to test beyond that it renders OK. Since `TaskList` adds another layer of complexity we want to verify that certain inputs produce certain outputs in a way amenable to automatic testing. To do this we'll create unit tests using [Jest](https://facebook.github.io/jest/) coupled with a test renderer.
+
+## Unit Tests with Jest ##
+Storybook stories, manual tests, and snapshot tests go a long way to avoiding UI Bugs. If stories cover a wide variety of component use cases, and we use tools that ensure a human checks any change to the story, errors are much less likely. 
+
+However, sometimes the devil is in the details. A test framework that is explicit about those details is needed. Which brings us to unit tests. 
+
+In our case, we want our `TaskList` to render any pinned tasks *before* unpinned tasks that it has passed in the `tasks` prop. Although we have a story (WithPinnedTasks) to test this exact scenario, it can be ambiguous to a human reviewer that if the component *stops* ordering the tasks like this, it is a bug. It certainly won't scream "*wrong!*" to the casual eye. 
+
+So, to avoid this problem, we can use Jest to render the story to the DOM and run some DOM querying code to verify the salient features of the output. THe nice thing about the story format is that we can simply import the story in our tests and render it there!
+
+Create a test file called src/components/TaskList.test.js. Here, we'll build our our tests that make assertions about the output.
+
 
 
